@@ -13,11 +13,6 @@ app = FastAPI(title="Skodus Engine", version="1.0.0")
 
 
 
-    ],
-    allow_credentials=True,
-    allow_methods=["GET", "POST"],
-    allow_headers=["*"],
-)
 
 MAX_FILE_SIZE = 10 * 1024 * 1024
 
