@@ -8,7 +8,19 @@ from sklearn.preprocessing import LabelEncoder
 import io
 
 app = FastAPI(title="Skodus Engine", version="1.0.0")
-
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "https://skodus.com",
+        "https://skodus.lovable.app",
+        "https://skodus.io",
+        "http://localhost:3000",
+        "http://localhost:5173",
+    ],
+    allow_credentials=True,
+    allow_methods=["GET", "POST"],
+    allow_headers=["*"],
+)
 
 
 
