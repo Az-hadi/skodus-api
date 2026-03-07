@@ -62,7 +62,7 @@ async def skodus_engine(file: UploadFile = File(...)):
         model.fit(X_train, y_train)
         last_date = df[date_cols[0]].max()
         future_dates = pd.date_range(last_date, periods=4, freq='MS')[1:]
-        preds = model.predict([[d.month, d.year] for d in future_dates])
+        Preds = Modèle.prédire(pd.DataFrame([[d.Mois, d.Année] pour d dans future_dates], columns=['M', 'y']))
         results["metrics"] = {"confidence_score": max(0, round(model.score(X_test, y_test), 2))}
         results["forecast"] = [round(p, 2) for p in preds.tolist()]
         results["forecast_periods"] = [str(d.date()) for d in future_dates]
